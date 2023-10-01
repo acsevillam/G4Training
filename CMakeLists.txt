@@ -63,6 +63,8 @@ target_link_libraries(Testing1 ${Geant4_LIBRARIES} ${ROOT_LIBRARIES})
 set(Testing1_SCRIPTS
   mac/vis.mac
   mac/init_vis.mac
+  mac/scorers.mac
+  mac/run1.mac
   )
 
 foreach(_script ${Testing1_SCRIPTS})

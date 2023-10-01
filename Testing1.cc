@@ -4,20 +4,19 @@
  */
 
 // Geant4 Headers
-#ifdef G4MULTITHREADED
-#include "G4MTRunManager.hh"
-#else
-#include "G4RunManager.hh"
-#endif
+#include "G4RunManagerFactory.hh"
 #include "G4UImanager.hh"
 #include "G4VisExecutive.hh"
 #include "G4UIExecutive.hh"
 #include "Randomize.hh"
 #include "QBBC.hh"
+#include "G4ScoringManager.hh"
 
 // T1 Headers
 #include "T1DetectorConstruction.hh"
 #include "T1ActionInitialization.hh"
+
+using namespace T1;
 
 int main(int argc,char** argv)
 {
@@ -38,12 +37,13 @@ int main(int argc,char** argv)
 
   // Construct the default run manager
   //
-#ifdef G4MULTITHREADED
-  G4MTRunManager* runManager = new G4MTRunManager;
-  runManager->SetNumberOfThreads(G4Threading::G4GetNumberOfCores());
-#else
-  G4RunManager* runManager = new G4RunManager;
-#endif
+  auto* runManager =
+    G4RunManagerFactory::CreateRunManager(G4RunManagerType::Default);
+
+  // Activate UI-command base scorer
+  // => Step PDD-3A
+  //G4ScoringManager * scoringManager = G4ScoringManager::GetScoringManager();
+  //scoringManager->SetVerboseLevel(1);
 
   // Set mandatory initialization classes
   //

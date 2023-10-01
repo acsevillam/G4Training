@@ -12,5 +12,9 @@
 # Initialize kernel
 /run/initialize
 #
+# Primitive scorers
+# => Step PDD-3B
+#/control/execute mac/scorers.mac
+
 # Visualization setting
 /control/execute mac/vis.mac

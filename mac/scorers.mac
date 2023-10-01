@@ -1,0 +1,18 @@
+# Energy deposit
+/score/create/boxMesh Mesh1
+/score/mesh/boxSize 25. 25. 25. cm
+/score/mesh/translate/xyz 0 0 0 cm
+/score/mesh/nBin 100 100 100 // x y z
+/score/quantity/doseDeposit dose
+/score/quantity/passageCellFlux passageCellFlux
+/score/filter/particle protonFilter proton
+/score/close
+
+/score/create/boxMesh Mesh2
+/score/mesh/boxSize 25. 25. 25. cm
+/score/mesh/translate/xyz 0 0 0 cm
+/score/mesh/nBin 100 1 1 // x y z
+/score/quantity/doseDeposit dose
+/score/quantity/passageCellFlux protonCellFlux
+/score/filter/particle protonFilter proton 
+/score/close

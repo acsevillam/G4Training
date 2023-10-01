@@ -10,6 +10,10 @@
 // T1 Headers
 #include "T1PrimaryGeneratorAction.hh"
 
+
+namespace T1
+{
+
 T1PrimaryGeneratorAction::T1PrimaryGeneratorAction(): G4VUserPrimaryGeneratorAction(),
 fParticleGun(0)
 {
@@ -20,10 +24,15 @@ fParticleGun(0)
 	G4ParticleTable* particleTable = G4ParticleTable::GetParticleTable();
 	G4String particleName;
 	G4ParticleDefinition* particle
+	// => Step PDD-1A
 	= particleTable->FindParticle(particleName="gamma");
+	//= particleTable->FindParticle(particleName="proton");
 	fParticleGun->SetParticleDefinition(particle);
 	fParticleGun->SetParticleMomentumDirection(G4ThreeVector(1.,0.,0.));
-	fParticleGun->SetParticleEnergy(6.*MeV);
+	// => Step PDD-1B | HVL-1A
+	fParticleGun->SetParticleEnergy(1.*MeV);
+	//fParticleGun->SetParticleEnergy(200.*MeV);
+	//fParticleGun->SetParticleEnergy(662.*keV);
 }
 
 T1PrimaryGeneratorAction::~T1PrimaryGeneratorAction()
@@ -40,3 +49,4 @@ void T1PrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 	fParticleGun->GeneratePrimaryVertex(anEvent);
 }
 
+}

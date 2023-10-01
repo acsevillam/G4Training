@@ -1,0 +1,31 @@
+# Macro file for the initialization of example B1
+# in interactive session
+#
+# Set some default verbose
+/control/verbose 0
+/control/saveHistory
+/run/verbose 0
+#
+# Change the default number of threads (in multi-threaded mode)
+#/run/numberOfThreads 4
+#
+# Initialize kernel
+/run/initialize
+#
+
+# Primitive scorers
+# => Step PDD-3C
+#/control/execute mac/scorers.mac
+
+/run/printProgress 10000
+
+# => Step PDD-6A
+/run/beamOn 1000000
+#/run/beamOn 1000000
+#/run/beamOn 1000000
+#/run/beamOn 1000000
+#/run/beamOn 1000000
+
+# => Step PDD-3D
+#/score/dumpQuantityToFile Mesh2 dose dose_profile.out
+#/score/dumpQuantityToFile Mesh2 protonCellFlux dose_profile.out

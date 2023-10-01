@@ -10,16 +10,19 @@
 
 /// Action initialization class.
 
+namespace T1
+{
+
 class T1ActionInitialization : public G4VUserActionInitialization
 {
   public:
-    T1ActionInitialization();
-    virtual ~T1ActionInitialization();
+    T1ActionInitialization() = default;
+    ~T1ActionInitialization() override = default;
 
-    virtual void BuildForMaster() const;
-    virtual void Build() const;
+    void BuildForMaster() const override;
+    void Build() const override;
 };
 
 #endif //T1ActionInitialization_h
 
-    
+}
