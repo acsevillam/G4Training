@@ -5,6 +5,7 @@
 
 // Geant4 Headers
 #include "G4RunManagerFactory.hh"
+#include "G4SteppingVerbose.hh"
 #include "G4UImanager.hh"
 #include "G4VisExecutive.hh"
 #include "G4UIExecutive.hh"
@@ -27,13 +28,12 @@ int main(int argc,char** argv)
     ui = new G4UIExecutive(argc, argv);
   }
 
-  // Choose the Random engine
-  //
-  CLHEP::RanluxEngine defaultEngine( 1234567, 4 );
-  G4Random::setTheEngine( &defaultEngine );
-  G4int seed = time( NULL );
-  G4Random::setTheSeed( seed );
+  // Optionally: choose a different Random engine...
+  // G4Random::setTheEngine(new CLHEP::MTwistEngine);
 
+  //use G4SteppingVerboseWithUnits
+  G4int precision = 4;
+  G4SteppingVerbose::UseBestUnit(precision);
 
   // Construct the default run manager
   //
