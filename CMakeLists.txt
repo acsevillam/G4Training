@@ -65,6 +65,8 @@ set(Testing1_SCRIPTS
   mac/init_vis.mac
   mac/scorers.mac
   mac/run1.mac
+  analysis/HVL.ipynb
+  analysis/PDD.ipynb
   )
 
 foreach(_script ${Testing1_SCRIPTS})

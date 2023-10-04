@@ -27,5 +27,5 @@
 #/run/beamOn 1000000
 
 # => Step PDD-3D
-#/score/dumpQuantityToFile Mesh2 dose dose_profile.out
-#/score/dumpQuantityToFile Mesh2 protonCellFlux dose_profile.out
+#/score/dumpQuantityToFile Mesh2 analysis/dose dose_profile.out
+#/score/dumpQuantityToFile Mesh2 analysis/protonCellFlux dose_profile.out
