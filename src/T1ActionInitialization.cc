@@ -15,7 +15,7 @@ namespace T1
 
 void T1ActionInitialization::BuildForMaster() const
 {
-	// => Step 5A
+	// => Step HVL-5A
 	//auto runAction = new T1RunAction;
 	//SetUserAction(runAction);
 }
@@ -24,15 +24,15 @@ void T1ActionInitialization::Build() const
 {
   SetUserAction(new T1PrimaryGeneratorAction);
 
-  // => Step 5B
+  // => Step HVL-5B
   //auto runAction = new T1RunAction;
   //SetUserAction(runAction);
 
-  // => Step 5C
+  // => Step HVL-5C
   //auto eventAction = new T1EventAction(runAction);
   //SetUserAction(eventAction);
 
-  // => Step 5D
+  // => Step HVL-5D
   //SetUserAction(new T1SteppingAction(eventAction));
 
 }  

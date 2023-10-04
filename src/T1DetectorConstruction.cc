@@ -138,7 +138,7 @@ void T1DetectorConstruction::SetupGeometry(G4LogicalVolume* motherVolume){
 	sdCube_log -> SetVisAttributes(sdCubeVisAtt);
 
 	// => Step HVL-5E
-	fScoringVolumeVector.push_back(sdCube_log);
+	//fScoringVolumeVector.push_back(sdCube_log);
 
 	//Physics Volume  =============================================================================================
 
