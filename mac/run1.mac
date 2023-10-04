@@ -7,7 +7,7 @@
 /run/verbose 0
 #
 # Change the default number of threads (in multi-threaded mode)
-#/run/numberOfThreads 4
+/run/numberOfThreads 2
 #
 # Initialize kernel
 /run/initialize
@@ -20,11 +20,11 @@
 /run/printProgress 10000
 
 # => Step HVL-6A
-/run/beamOn 1000000
-#/run/beamOn 1000000
-#/run/beamOn 1000000
-#/run/beamOn 1000000
-#/run/beamOn 1000000
+/run/beamOn 100000
+#/run/beamOn 100000
+#/run/beamOn 100000
+#/run/beamOn 100000
+#/run/beamOn 100000
 
 # => Step PDD-3D
 #/score/dumpQuantityToFile Mesh2 analysis/dose dose_profile.out
